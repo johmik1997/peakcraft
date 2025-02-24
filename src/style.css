@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{color: #fff;; 
+background:#1f2020;
+font-family: Poppins, Helvetica, sans-serif;}
