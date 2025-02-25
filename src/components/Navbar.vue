@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {RouterLink} from "vue-router"
 
 const showMobileNav = ref(false);
 const isMobile = ref(false);
@@ -30,18 +31,18 @@ onUnmounted(() => {
   <header class="bg-black bg-opacity-10  px-7 py-4 md:px-28 md:py-6 backdrop-blur-3xl fixed w-full z-40">
     <nav class="flex justify-between items-center">
       <div>
-        <a href="#">
+        <RouterLink to="/">
           <img src="../assets/logo.webp" class="h-[60px] md:h-12 w-auto" alt="Logo for PeakXraft" />
-        </a>
+        </RouterLink>
       </div>
 
       <!-- Desktop Navigation -->
       <div v-if="!isMobile" class="hidden md:flex space-x-8 text-white uppercase font-medium">
         <ul class="flex space-x-8">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Project</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Domain</a></li>
+          <li><RouterLink active-class="active" to="/about">About Us</RouterLink></li>
+          <li><RouterLink  active-class="active"  to="/project">Project</RouterLink></li>
+          <li><RouterLink active-class="active"  to="/event">Events</RouterLink></li>
+          <li><RouterLink active-class="active" to="domain">Domain</RouterLink></li>
         </ul>
         <div>
           <button class="md:px-10 md:py-2 md:border-white md:border-[1px] md:rounded cursor-pointer">Join us</button>
@@ -58,10 +59,10 @@ onUnmounted(() => {
         <ul
           v-if="showMobileNav"
           class="absolute top-16 px-6 right-4 w-52 py-10 text-xl text-white font-alata bg-indigo-900 bg-opacity-90 rounded-md flex flex-col space-y-5 shadow-lg">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Project</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Domain</a></li>
+          <li><RouterLink active-class="active" to="/about">About Us</RouterLink></li>
+          <li><RouterLink  active-class="active"  to="/project">Project</RouterLink></li>
+          <li><RouterLink active-class="active"  to="/event">Events</RouterLink></li>
+          <li><RouterLink active-class="active" to="domain">Domain</RouterLink></li>
           <li class="px-1 py-2 cursor-pointer">
             <a href="#">Join Us</a>
           </li>
@@ -82,5 +83,10 @@ onUnmounted(() => {
 .mobile-nav-leave-to {
   transform: translateY(-20px);
   opacity: 0;
+}
+.active{
+  font-weight:800;
+  color:blue;
+  
 }
 </style>

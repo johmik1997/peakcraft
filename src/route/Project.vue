@@ -1,3 +1,11 @@
+<script setup>
+import Navbar from '../components/Navbar.vue';
+import  Fotter from '../components/Fotter.vue'
+</script>
 <template>
-    <h1>test</h1>
+    <div>
+      <Navbar/>
+      <Fotter/>
+    </div>
+
   </template>

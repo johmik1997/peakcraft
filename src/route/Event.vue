@@ -1,3 +1,13 @@
+<script setup>
+import Navbar from '../components/Navbar.vue';
+import  Fotter from '../components/Fotter.vue'
+import Page404 from '../components/Page404.vue'
+</script>
 <template>
-    <h1>test</h1>
+    <div>
+      <Navbar/>
+      <Page404/>
+      <Fotter/>
+    </div>
+
   </template>
